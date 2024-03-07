@@ -3,24 +3,12 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
-  // Enable CORS
   app.enableCors({
-    origin: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    // allowed headers
-    allowedHeaders: [
-      'Content-Type',
-      'Origin',
-      'X-Requested-With',
-      'Accept',
-      'Authorization',
-    ],
-    // headers exposed to the client
-    exposedHeaders: ['Authorization'],
-    credentials: true,
+    origin: '*', // Permitir solicitudes desde localhost:3001
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization'], // Cabeceras permitidas
+    credentials: true, // Permitir el envío de cookies
   });
-
   await app.listen(3000);
 }
 bootstrap();
