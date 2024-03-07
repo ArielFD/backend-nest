@@ -8,8 +8,8 @@ export class UsersService {
   private readonly users = [
     {
       userId: 1,
-      username: 'pruebatecnica',
-      password: 'pruebatecnica',
+      username: 'ArielFerrera',
+      password: 'ArielFerrera',
     },
     // {
     //   userId: 2,
